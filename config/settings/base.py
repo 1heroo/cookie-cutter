@@ -97,7 +97,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
-AUTH_USER_MODEL = "auth.User"
+# AUTH_USER_MODEL = "auth.User"
 
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
@@ -108,13 +108,11 @@ OAUTH_CALLBACK_URL = "http://localhost:8000/oauth/complete/github"
 
 
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.mailgun.org"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "postmaster@sandbox52826105e68043ecb815c64768a75965.mailgun.org"#os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = "ea51715cbaef59e1ecaab12403bb38a6-b0ed5083-c42c0fd4"#os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
@@ -231,8 +229,8 @@ X_FRAME_OPTIONS = "DENY"
 #     "DJANGO_EMAIL_BACKEND",
 #     default="django.core.mail.backends.smtp.EmailBackend",
 # )
+# EMAIL_TIMEOUT=5
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
-EMAIL_TIMEOUT = 3
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -271,20 +269,20 @@ LOGGING = {
 # # django-allauth
 # # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
-# # https://django-allauth.readthedocs.io/en/latest/configuration.html
-# ACCOUNT_AUTHENTICATION_METHOD = "username"
-# # https://django-allauth.readthedocs.io/en/latest/configuration.html
-# ACCOUNT_EMAIL_REQUIRED = True
-# # https://django-allauth.readthedocs.io/en/latest/configuration.html
-# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-# # https://django-allauth.readthedocs.io/en/latest/configuration.html
-# ACCOUNT_ADAPTER = "protfolio_again.users.adapters.AccountAdapter"
-# # https://django-allauth.readthedocs.io/en/latest/forms.html
-# ACCOUNT_FORMS = {"signup": "protfolio_again.users.forms.UserSignupForm"}
-# # https://django-allauth.readthedocs.io/en/latest/configuration.html
-# SOCIALACCOUNT_ADAPTER = "protfolio_again.users.adapters.SocialAccountAdapter"
-# # https://django-allauth.readthedocs.io/en/latest/forms.html
-# SOCIALACCOUNT_FORMS = {"signup": "protfolio_again.users.forms.UserSocialSignupForm"}
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_AUTHENTICATION_METHOD = "username"
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_REQUIRED = True
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_ADAPTER = "protfolio_again.users.adapters.AccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/forms.html
+ACCOUNT_FORMS = {"signup": "protfolio_again.users.forms.UserSignupForm"}
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+SOCIALACCOUNT_ADAPTER = "protfolio_again.users.adapters.SocialAccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/forms.html
+SOCIALACCOUNT_FORMS = {"signup": "protfolio_again.users.forms.UserSocialSignupForm"}
 
 
 # Your stuff...

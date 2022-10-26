@@ -162,12 +162,3 @@ sentry_sdk.init(
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-EMAIL_HOST = "smtp.mailgun.org"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "postmaster@sandbox52826105e68043ecb815c64768a75965.mailgun.org"#os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = "ea51715cbaef59e1ecaab12403bb38a6-b0ed5083-c42c0fd4"#os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
